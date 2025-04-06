@@ -1,1 +1,1 @@
-# BinaryBandits
+# Now React app is Ready 
