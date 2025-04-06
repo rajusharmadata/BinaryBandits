@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react"
 import Navcontener from "./landing_page/Navcontener";
 import Home from "./landing_page/Home/Home";
 import About from "./landing_page/About_page/About";
@@ -26,6 +27,7 @@ function Layout() {
         <Route path="/auth" element={<AuthForm />} />
         <Route path="/work" element={<WorkExperience />} /> {/* Work Experience page */}
         <Route path="*" element={<NotFound />} /> {/* Show NotFound for invalid paths */}
+        
       </Routes>
       {!isNotFound && <Footer />} {/* Show Footer only on valid pages */}
     </>
