@@ -11,11 +11,12 @@ const WorkExperience = () => {
 
   const achievements = [
     {
-      title: "Participant - International Hackathon 6.0",
+      title: "International Hacknovate 6.0",
       date: "2025",
       description: "Collaborated in a global coding competition, working on innovative solutions under tight deadlines. Gained hands-on experience in problem-solving, teamwork, and modern development technologies.",
-      skills: ["Problem Solving", "Team Collaboration", "React.js", "Tailwind CSS"," Node.js", "Express.js", "MongoDB"],
+      skills: ["Problem Solving", "Team Collaboration", "React.js", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
       image: hackathonImage,
+      link: "https://www.abesit.in/hacknovate/" // Replace with the actual Hacknovate 6.0 website link
     },
     // You can add more achievements here
   ];
@@ -88,7 +89,15 @@ const WorkExperience = () => {
             <div className="w-full md:w-3/5 p-6 md:p-8 flex flex-col justify-between">
               <div>
                 <h3 className="text-2xl font-bold text-indigo-800 mb-3">
-                  {item.title}
+                  {item.title}{' '}
+                  <a 
+                    href={item.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-indigo-600 hover:text-indigo-800 underline transition-colors duration-200"
+                  >
+                    Link
+                  </a>
                 </h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
                   {item.description}
