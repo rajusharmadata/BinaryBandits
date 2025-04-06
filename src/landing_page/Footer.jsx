@@ -119,7 +119,7 @@ export default function Footer() {
               {["Home", "About", "Services", "Work", "Contact"].map((item) => (
                 <motion.li key={item} variants={linkVariants} initial="initial" whileHover="hover">
                   <Link
-                    to={`/${item.toLowerCase().replace(/\s+/g, '-')}`}
+                    to={item === "Home" ? "/" : `/${item.toLowerCase().replace(/\s+/g, '-')}`} // Set Home to root "/"
                     onClick={() => window.scrollTo(0, 0)}
                     className="text-gray-300 hover:text-indigo-300 text-sm transition-all duration-300 flex items-center"
                   >

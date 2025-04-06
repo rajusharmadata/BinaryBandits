@@ -31,7 +31,7 @@ export default function Navbar() {
       } transition-all duration-700 ease-in-out`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16 sm:h-20">
-        {/* Logo with enhanced animation */}
+        {/* Logo */}
         <Link
           to="/"
           className={`text-2xl sm:text-3xl font-extrabold tracking-tight no-underline transition-all duration-500 font-mono flex items-center ${
@@ -44,12 +44,12 @@ export default function Navbar() {
           Binary<span className="text-indigo-500 dark:text-blue-400">Bandits</span>
         </Link>
 
-        {/* Desktop Menu with Work Experience added */}
+        {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-10 lg:space-x-12">
           {["Home", "About", "Services", "Work", "Contact"].map((item) => (
             <Link
               key={item}
-              to={`/${item.toLowerCase().replace(/\s+/g, '-')}`}
+              to={item === "Home" ? "/" : `/${item.toLowerCase().replace(/\s+/g, '-')}`} // Set Home to root "/"
               className={`relative text-base lg:text-lg font-semibold tracking-wide leading-relaxed transition-all duration-500 ease-in-out group ${menuItemAnimation} ${
                 isDark ? "text-gray-100 hover:text-blue-400" : "text-gray-800 hover:text-indigo-600"
               }`}
@@ -65,7 +65,7 @@ export default function Navbar() {
             </Link>
           ))}
 
-          {/* Dark Mode Toggle with enhanced animation */}
+          {/* Dark Mode Toggle */}
           <button
             onClick={() => setIsDark(!isDark)}
             className={`p-2 rounded-full transition-all duration-300 ease-in-out transform hover:rotate-12 ${
@@ -83,7 +83,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Menu Button with improved animation */}
+        {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className={`md:hidden p-2 rounded-full transition-all duration-300 ease-in-out transform active:scale-90 ${
@@ -101,7 +101,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu with improved animation and Work Experience added */}
+      {/* Mobile Menu */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-700 ease-in-out ${
           isOpen ? "max-h-[32rem] opacity-100" : "max-h-0 opacity-0"
@@ -111,8 +111,8 @@ export default function Navbar() {
           {["Home", "About", "Services", "Work", "Contact"].map((item) => (
             <Link
               key={item}
-              to={`/${item.toLowerCase().replace(/\s+/g, '-')}`}
-              onClick={() => handleNavigation(`/${item.toLowerCase().replace(/\s+/g, '-')}`)}
+              to={item === "Home" ? "/" : `/${item.toLowerCase().replace(/\s+/g, '-')}`} // Set Home to root "/"
+              onClick={() => handleNavigation(item === "Home" ? "/" : `/${item.toLowerCase().replace(/\s+/g, '-')}`)}
               className={`block py-3 px-4 text-lg font-semibold tracking-wide leading-loose rounded-lg transition-all duration-300 ease-in-out transform hover:translate-x-2 ${
                 isDark
                   ? "text-gray-100 hover:bg-gray-800 hover:text-blue-400"
