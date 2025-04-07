@@ -137,7 +137,7 @@ export default function Footer() {
               {[
                 { icon: FiFacebook, href: "https://facebook.com", label: "Facebook" },
                 { icon: FiTwitter, href: "https://twitter.com", label: "Twitter" },
-                { icon: FiInstagram, href: "https://instagram.com", label: "Instagram" },
+                { icon: FiInstagram, href: "https://www.instagram.com/binarybandits0/?igsh=bWMyaGo5bzQ5a2Z6#", label: "Instagram" },
                 { icon: FiGithub, href: "https://github.com", label: "GitHub" },
               ].map((social, index) => (
                 <motion.a
